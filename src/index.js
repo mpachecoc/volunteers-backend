@@ -20,4 +20,4 @@ app.use(cors());
 app.use(express.json());   // To say express I'll use Json
 app.use(routes);
 
-server.listen(3333);
+server.listen(process.env.PORT || 3333);

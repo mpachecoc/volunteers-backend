@@ -5,7 +5,7 @@ const { findConnections, sendMessage } = require('../websocket');
 module.exports = {
 
     async index (request, response) { 
-        const volunteers = await Volunteer.find();
+        const volunteers = await Volunteer.find().limit(10).sort({ _id: 'desc' });
 
         return response.json(volunteers);
     },
